@@ -1,0 +1,9 @@
+:root {
+  color-scheme: dark;
+  --header-height: 50px;
+  --page-padding-default: 32px;
+  --page-max-width: 1200px;
+  --page-padding-y: 160px;
+  --post-max-width: 760px;
+  --transparent:hsla(0,0%,100%,0)
+}

@@ -1,0 +1,124 @@
+
+#cards {
+  --border-shine-opacity: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  position: relative;
+  border-radius: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+  #cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+#cards:hover {
+  --border-shine-opacity: 1;
+}
+
+.section__card {
+  --radius: 12px;
+  --border: 1px;
+  user-select: none;
+  contain: strict;
+  margin: 0px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 12px 12px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.12);
+  height: 400px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.section__card:hover {
+  transform: scale(1.03);
+}
+
+.section__card::before {
+  content: "";
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  inset: 0px;
+  border-radius: inherit;
+  opacity: var(--border-shine-opacity);
+  transition: opacity 400ms ease 0s;
+  will-change: background, opacity;
+  background: radial-gradient(800px circle at var(--x) var(--y),rgba(255,255,255,0.3),transparent 40%);
+}
+
+.section__card-border {
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  z-index: 6;
+  opacity: var(--border-shine-opacity);
+  top: var(--border);
+  bottom: var(--border);
+  left: var(--border);
+  right: var(--border);
+  border-radius: var(--radius);
+  will-change: background, opacity;
+  background: radial-gradient(400px circle at var(--x) var(--y),rgba(255,255,255,0.1),transparent);
+  contain: strict;
+  transition: opacity 400ms ease 0s;
+}
+
+.section__card-href {
+  text-decoration: none;
+  color: unset;
+  position: absolute;
+  top: var(--border);
+  bottom: var(--border);
+  left: var(--border);
+  right: var(--border);
+  border-radius: var(--radius);
+  background: #1c1c1f;
+}
+
+.section__card-content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: end;
+  justify-content: flex-start;
+}
+
+.section__card-image {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  contain: strict;
+  border-top-right-radius: var(--radius);
+  border-top-left-radius: var(--radius);
+  z-index: 2;
+}
+
+.section__card-image img {
+  min-height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.section__card-text {
+  padding: 12px;
+}
+
+.section__card-text h3 {
+  font-weight: 500;
+  font-size: 19px;
+  /* line-height: 1.6; */
+}
+
+.section__card-text p {
+  color: #8a8f98;
+}

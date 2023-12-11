@@ -1,0 +1,144 @@
+@import "./base/const.css";
+@import "./base/header.css";
+@import "./base/buttons.css";
+@import "./base/notifications.css";
+@import "./base/animations.css";
+@import "./base/footer.css";
+@import "./cards/postCards.css";
+@import "./effects/glow.css";
+@import "./effects/semicircle.css";
+
+*,:after,:before{
+  padding:0;
+  margin:0;
+  box-sizing:border-box
+}
+
+body {
+  color:#fff;
+  background:#000212;
+  font-family: Inter,sans-serif;
+}
+
+main {
+  padding-top: var(--header-height);
+}
+
+.section {
+  padding-left: var(--page-padding-default);
+  padding-right: var(--page-padding-default);
+  max-width: 1264px;
+  width: 100%;
+  margin: 0px auto;
+}
+
+.news__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.news__title h1 {
+  margin: 48px 0px 44px;
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 590;
+}
+
+.news__rows {
+  position: relative;
+  display: flex;
+  flex: initial;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+  z-index: 50;
+}
+
+.news__row {
+  display: flex;
+  flex: initial;
+  flex-flow: wrap;
+  gap: 24px;
+}
+
+.news__more {
+  position: relative;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 510;
+  color: #828fff;
+  transition: 0.1s;
+  z-index: 10;
+}
+
+.news__more:hover {
+  color: #fff;
+}
+
+.newsletter {
+  max-width: 500px;
+  display: grid;
+  position: relative;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 150px;
+}
+
+
+.form {
+  --border-radius: 16px;
+  display: flex;
+}
+
+.form__email {
+  font: inherit;
+	padding: 0px 18px;
+	border-radius: var(--border-radius);
+ 	border: 2px solid #2e2e32;
+	width: 100%;
+	font-size: 18px;
+	color: #f7f8f8;
+  background-color: #000212;
+  border-right: unset;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  overflow: hidden
+}
+
+.form__email:focus {
+	outline: unset;
+}
+
+.form__button {
+	background-color: #000212;
+	padding: 10px;
+	border: none;
+	width: 70px;
+	height: 50px;
+  border: 2px solid #2e2e32;
+	border-radius: var(--border-radius);
+	font-size: 18px;
+	color: #b4bcd099;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.form__button:hover {
+  background: hsla(0,0%,100%,.07);
+  color: #f7f8f8;
+}
+
+.form__button:active {
+  background: hsla(0, 0%, 0%, 0.4);
+}
+
+::placeholder {
+  color: #b4bcd099;
+}

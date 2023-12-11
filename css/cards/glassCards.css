@@ -1,0 +1,152 @@
+.glass {
+  position: relative;
+  flex: 1 1 360px;
+  height: 440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.glass:before {
+  content:' ';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  background: #5b5b5b;
+  border-radius: 16px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+}
+
+.glass:after {
+  content:'';
+  position: absolute;
+  top: 0;
+  /* left: 50px; */
+  width: 50%;
+  height: 100%;
+  background: #867a7a;
+  border-radius: 16px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+  filter: blur(30px);
+}
+
+.glass:before, .glass:after {
+  background: linear-gradient(to right, var(--color-a), var(--color-b));
+}
+
+.glass:hover:before, .glass:hover:after {
+  transform: skewX(0deg);
+  left: 0;
+  margin: 0 40px;
+  width: 70%;
+}
+
+.glass span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.glass span::before, .glass span::after {
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0; 
+  animation: span-animation-1 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.glass:hover span:after {
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+  bottom: 0;
+  right: 0;
+  left: unset;
+  top: unset;
+  transition: 1s;
+}
+
+.glass:hover span:before {
+  width: 60px;
+  height: 60px;
+  opacity: 1;
+  transition: 0.7s;
+}
+
+.glass__card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 270px;
+  max-width: 400px;
+  justify-content: space-between;
+  position: relative;
+  left: 0;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  z-index: 1;
+  transform: 0.5s;
+  color: #fff;
+}
+
+.glass__card p {
+  color: #d0d6e0;
+}
+
+.glass h2 {
+  color: rgb(247, 248, 248);
+  margin-bottom: 8px;
+}
+
+
+@keyframes span-animation-1
+{
+  0%, 100%
+  {
+    transform: translateY(20px);
+  }
+  
+  50%
+  {
+    transform: translateX(40px);
+  }
+}
+
+.glass span::after {
+  animation: span-animation-2 2s ease-in-out infinite;
+}
+
+@keyframes span-animation-2
+{
+  0%, 100%
+  {
+    transform: translateY(20px);
+  }
+  
+  50%
+  {
+    transform: translateX(-100px);
+  }
+
+}

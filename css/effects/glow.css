@@ -1,0 +1,24 @@
+.glow {
+  --opacity: 0.26;
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  overflow: visible;
+  z-index: 1234;
+  transform: translateZ(0px);
+  inset: 0px;
+}
+
+.glow::before {
+  content: "";
+  position: absolute;
+  opacity: var(--opacity);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(0px);
+  width: calc(100vw - 50px);
+  height: 100vh;
+  filter: blur(80px);
+  --page-edge: calc((100vw - var(--page-max-width)) / 2);
+  background: radial-gradient( 400px circle at calc(100% - var(--page-edge) - 10%) 45%, var(--color-a), 70%, transparent ), radial-gradient(400px circle at 50% 55%,var(--color-b),60%,transparent), radial-gradient(350px circle at calc(var(--page-edge) + 15%) 40%,var(--color-c),60%,transparent);
+}

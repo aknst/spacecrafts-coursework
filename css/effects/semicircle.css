@@ -1,0 +1,35 @@
+.semicircle {
+  --color: #716efb;
+  pointer-events: none;
+  user-select: none;
+  position: relative;
+  width: min(var(--page-max-width), 100%);
+  margin: -192px auto -192px;
+  height: 600px;
+  overflow: hidden;
+  -webkit-mask-image: radial-gradient(circle at center center, black, transparent 80%);
+}
+
+.semicircle::after {
+  width: 200%;
+  left: -50%;
+  position: absolute;
+  content: "";
+  top: 50%;
+  border-top: 1px solid rgba(120, 118, 197, 0.4);
+  aspect-ratio: 1 / 0.5;
+  border-radius: 50%;
+  background: #000212;
+}
+
+.semicircle::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  opacity: 0.4;
+  background: radial-gradient(
+    circle at bottom center,
+    var(--color),
+    transparent 70%
+  );
+}

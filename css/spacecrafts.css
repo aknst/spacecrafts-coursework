@@ -1,0 +1,257 @@
+@import "./base/const.css";
+@import "./base/header.css";
+@import "./base/animations.css";
+@import "./base/notifications.css";
+@import "./base/footer.css";
+@import "./effects/circlePulse.css";
+@import "./cards/glowingCards.css";
+@import "./effects/glow.css";
+
+*,:after,:before{
+  padding:0;
+  margin:0;
+  box-sizing:border-box
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color:#fff;
+  background:#000212;
+  font-family: Inter,sans-serif;
+}
+
+main {
+  padding-top: var(--header-height);
+}
+
+.spacecrafts {
+  padding-left: var(--page-padding-default);
+  padding-right: var(--page-padding-default);
+  max-width: calc(var(--page-max-width) + var(--page-padding-default) + var(--page-padding-default));
+  width: 100%;
+  margin: 0 auto
+}
+
+.spacecrafts__header {
+  padding-left: var(--page-padding-default);
+  padding-right: var(--page-padding-default);
+}
+
+.spacecrafts__header-banner {
+  position: relative;
+  /* background-size: 120px; */
+  /* position: absolute; */
+  z-index: -1;
+}
+
+.spacecrafts__header-banner::after{
+  content: "";
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  inset: 0;
+  opacity: .6;
+  filter: blur(140px);
+  background: radial-gradient(ellipse 200px 200px at 30% 40%,#3360ff,var(--transparent)),radial-gradient(200px 200px at 70% 60%,#3360ff,var(--transparent))
+}
+
+
+.spacecrafts__header-banner img {
+  position: absolute;
+  width: 100%;
+  color: transparent;
+  object-fit: cover;
+}
+
+.spacecrafts__header-logo {
+  position: relative;
+  display: flex;
+  min-width: 100%;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 64px 0px;
+}
+
+.spacecrafts__header-logo:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  backface-visibility: visible;
+  overflow: hidden;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0MCAyNDAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0MCAyNDAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxyZWN0IHg9IjEwNiIgeT0iOTAiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiLz48cmVjdCB4PSI3NCIgeT0iNjMiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIyMyIgeT0iNjYiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSI1MCIgeT0iMTEwIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iNjMiIHk9IjEyOCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjQ1IiB5PSIxNDkiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSI5MiIgeT0iMTUxIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iNTgiIHk9IjgiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNDciIHk9IjMzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIi8+PHJlY3QgeD0iOTEiIHk9IjQzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMTY5IiB5PSIyOSIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjE4MiIgeT0iMTkiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNjEiIHk9IjU5IiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMTM4IiB5PSI5NSIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjE5OSIgeT0iNzEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIzIiBoZWlnaHQ9IjMiLz48cmVjdCB4PSIyMTMiIHk9IjE1MyIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjIiIGhlaWdodD0iMiIvPjxyZWN0IHg9IjEyOCIgeT0iMTYzIiBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIi8+PHJlY3QgeD0iMjA1IiB5PSIxNzQiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxNTIiIHk9IjIwMCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjxyZWN0IHg9IjUyIiB5PSIyMTEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiLz48cmVjdCB5PSIxOTEiIGZpbGw9IiNGRkZGRkYiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiLz48cmVjdCB4PSIxMTAiIHk9IjE4NCIgZmlsbD0iI0ZGRkZGRiIgd2lkdGg9IjEiIGhlaWdodD0iMSIvPjwvc3ZnPg==);
+  --mask-visible: #000;
+  --mask-ease: rgba(0,0,0,.2);
+  --mask-invisible: transparent;
+  --shadow-size: 100px;
+  --shadow-size-x: 400px;
+  --shadow-horizontal: linear-gradient( to right, var(--mask-invisible) 0%, var(--mask-ease) calc(var(--shadow-size) / 2), var(--mask-visible) var(--shadow-size-x), var(--mask-visible) calc(100% - var(--shadow-size-x)), var(--mask-ease) calc(100% - calc(var(--shadow-size-x) / 2)), var(--mask-invisible) 100% );
+  --shadow-vertical: linear-gradient( to top, var(--mask-visible) 0, var(--mask-visible) calc(100% - var(--shadow-size)), var(--mask-ease) calc(100% - calc(var(--shadow-size) / 2)), var(--mask-invisible) 100% );
+  mask-image: var(--shadow-horizontal),var(--shadow-vertical);
+  -webkit-mask-image: var(--shadow-horizontal),var(--shadow-vertical);
+  mask-composite: destination-in;
+  -webkit-mask-composite: destination-in;
+}
+
+.spacecrafts__header-logo::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(0px);
+  height: 256px;
+  width: 256px;
+  background: linear-gradient(rgba(108, 56, 255, 0.8) 0%, rgba(181, 154, 255, 0.8) 100%);
+  opacity: 0.4;
+  border-radius: 50%;
+  filter: blur(80px);
+  overflow: visible;
+}
+
+.spacecrafts__header-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 740px;
+  margin: 0px auto 96px;
+  z-index: 60;
+}
+
+.spacecrafts__header-text .subtitle {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: unset;
+  background: linear-gradient(93.3deg,#CBB8FF 0%,#807DFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.spacecrafts__header-text h1 {
+  color: currentcolor;
+  margin: 16px 0px;
+  /* font-weight: 600; */
+  line-height: 1.2;
+  letter-spacing: -0.022px;
+  font-size: 36px;
+}
+
+.spacecrafts__header-text h2 {
+  color: #d0d6e0;
+  font-size: 18px;
+  font-weight: var(--font-weight-regular);
+  line-height: 1.6;
+  letter-spacing: -0.014px;
+}
+
+.spacecrafts__header-text a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #828fff;
+  transition: 0.1s;
+}
+
+.spacecrafts__header-text a:hover {
+  color: #fff;
+}
+
+.hr {
+  border-color: #2e2e32;
+  margin: 120px auto;
+  max-width: 890px;
+  border: 0;
+  height: 0;
+  border-top: 1px solid #2e2e32;
+}
+
+.spacecrafts__content-section {
+  position: relative;
+}
+
+.section__header {
+  max-width: 690px;
+  margin: auto auto 46px;
+}
+
+.section__title {
+  font-weight: 1000;
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.022px;
+  margin: auto;
+}
+
+.section__title-href {
+  text-decoration: none;
+  cursor: pointer;
+  color: currentcolor;
+}
+
+.section__title-href::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-left: 8px;
+  transition: opacity 0.2s, transform 0.2s, visibility 0s var(--visibility-delay,0.2s);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%);
+  background-size: cover;
+  background-image: url(../svgs/icon.svg);
+}
+
+.section__title-href:hover::after, .section__title-href:focus::after {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  --visibility-delay: 0s;
+}
+
+.section__header p {
+  font-size: 18px;
+  letter-spacing: -0.014px;
+  line-height: 30px;
+  margin: 22px 0px 0px;
+  color: #d0d6e0;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .section__title {
+    line-height: 1.0;
+    font-size: 28px;
+  }
+
+  .section__header p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .spacecrafts__header-text h1 {
+    font-size: 28px;
+  }
+
+  .spacecrafts__header-text h2 {
+    font-size: 16px;
+  }
+}

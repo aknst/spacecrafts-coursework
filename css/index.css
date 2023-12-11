@@ -1,0 +1,128 @@
+@import "./base/const.css";
+@import "./base/header.css";
+@import "./base/mainHeader.css";
+@import "./base/footer.css";
+@import "./base/buttons.css";
+@import "./cards/glassCards.css";
+@import "./effects/stars.css";
+@import "./effects/semicircle.css";
+
+*,:after,:before{
+  padding:0;
+  margin:0;
+  box-sizing:border-box
+}
+
+body{
+  color: #fff;
+  background: #000212;
+  font-family: Inter,sans-serif;
+}
+
+main {
+  padding-top: var(--header-height);
+}
+
+.heading {
+  text-align: center;
+  display: flex;
+  max-width: 560px;
+  margin: 0px auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: var(--page-padding-y);
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 24px;
+}
+
+.heading__subtitle {
+  font-size: 1.15em;
+  background: linear-gradient(93.3deg,#CBB8FF 0%,#807DFF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heading__title {
+  font-size: 3.5em;
+  font-weight: 700;
+  margin-bottom: 0.55em;
+  margin-top: 0.2em;
+}
+
+.heading__drone {
+  height: auto;
+  width: 50%;
+  animation-play-state: running;
+  animation: 6s ease infinite float-y;
+}
+
+@keyframes float-y {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.content {
+  position: relative;
+  padding-left: var(--page-padding-default);
+  padding-right: var(--page-padding-default);
+  max-width: calc(var(--page-max-width) + var(--page-padding-default) + var(--page-padding-default));
+  width: 100%;
+  margin: 0 auto;
+  z-index: 90;
+}
+
+.content__text {
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 1.8em;
+  color: rgb(247, 248, 248);
+}
+
+.cards__title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 34px;
+  color: rgb(247, 248, 248);
+}
+
+.cards__title h1 {
+  font-size: 2em;
+  color: rgb(247, 248, 248);
+}
+
+.cards__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.cards__container {
+  margin-bottom: 200px;
+}
+
+@media only screen and (max-width: 496px) {
+  .layer__header {
+    font-size: 12px;
+  }
+
+  .content__text {
+    font-size: 2.1em;
+  }
+
+  .cards__title h1 {
+    font-size: 1.6em;
+  }
+
+}
